@@ -1,5 +1,6 @@
 from io import StringIO
 import sys
+from collections import deque
 
 input1 = """George
 Peter
@@ -16,8 +17,6 @@ Alexander
 End"""
 # sys.stdin = StringIO(input1)
 sys.stdin = StringIO(input2)
-
-from collections import deque
 
 queue = deque()
 
