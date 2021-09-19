@@ -1,6 +1,5 @@
 from io import StringIO
 import sys
-from collections import deque
 
 input1 = """5 4 8 6 3 8 7 7 9
 16"""
@@ -9,7 +8,7 @@ input2 = """1 7 8 2 5 4 7 8 9 6 3 2 5 4 6
 # sys.stdin = StringIO(input1)
 sys.stdin = StringIO(input2)
 
-clothes_in_box = list(map(int, input().split(" ")))     #stack
+clothes_in_box = list(map(int, input().split(" ")))  # stack
 # clothes_in_box = [int(el) for el in input().split(" ")] #stack
 rack_capacity = int(input())
 filled_capacity = 0
