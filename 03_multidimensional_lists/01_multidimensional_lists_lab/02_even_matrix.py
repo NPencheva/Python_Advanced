@@ -1,0 +1,37 @@
+from io import StringIO
+import sys
+
+input1 = """2
+1, 2, 3
+4, 5, 6"""
+input2 = """4
+10, 33, 24, 5, 1
+67, 34, 11, 110, 3
+4, 12, 33, 63, 21
+557, 45, 23, 55, 67"""
+
+# sys.stdin = StringIO(input1)
+sys.stdin = StringIO(input2)
+
+
+def read_matrix():
+    # n, m = [int(x) for x in input().split(", ")]
+    n = int(input())
+    this_matrix = []
+
+    for _ in range(n):
+        row = [int(x) for x in input().split(", ")]
+        this_matrix.append(row)
+
+    return this_matrix
+
+
+matrix = read_matrix()
+
+rows = len(matrix)
+even_matrix = []
+
+for row_index in range(rows):
+    even_matrix.append([el for el in matrix[row_index] if el % 2 == 0])
+
+print(even_matrix)
