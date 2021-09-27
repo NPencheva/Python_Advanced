@@ -29,8 +29,6 @@ def read_matrix():
 
 matrix = read_matrix()
 
-rows = len(matrix)
-
 for column_index in range(m):
     sum_columns = 0
     for row_index in range(n):
