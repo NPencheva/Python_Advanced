@@ -49,7 +49,6 @@ matrix = read_matrix()
 
 while True:
     command_line = input()
-    is_valid = True
     if command_line == "END":
         break
     else:
