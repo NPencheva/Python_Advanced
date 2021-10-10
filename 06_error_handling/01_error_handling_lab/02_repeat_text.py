@@ -1,7 +1,6 @@
-text = input()
-times = input()
-
 try:
-    print(text * int(times))
+    text = input()
+    times = int(input())
+    print(text * times)
 except ValueError:
     print("Variable times must be an integer")
