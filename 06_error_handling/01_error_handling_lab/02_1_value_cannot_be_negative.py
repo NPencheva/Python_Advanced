@@ -1,5 +1,6 @@
 class ValueCannotBeNegative(Exception):
     """input value is negative"""
+    pass
 
 
 for i in range(5):
