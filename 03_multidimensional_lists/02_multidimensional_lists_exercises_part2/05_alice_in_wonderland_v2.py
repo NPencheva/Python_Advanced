@@ -65,6 +65,8 @@ def alice_position():
 
 alice_row, alice_col = alice_position()[0], alice_position()[1]
 teabags_collected = 0
+new_row = alice_row
+new_col = alice_col
 
 command = input()
 
@@ -76,66 +78,35 @@ while True:
         if new_row < 0:
             print("Alice didn't make it to the tea party.")
             break
-        new_position = matrix[new_row][new_col]
-        if new_position == "R":
-            matrix[new_row][new_col] = "*"
-            print("Alice didn't make it to the tea party.")
-            break
-        elif new_position != "." and new_position != "*":
-            teabags_collected += int(new_position)
-        matrix[new_row][new_col] = "*"
-        alice_row = new_row
-        alice_col = new_col
-
     elif command == "down":
         new_row = alice_row + 1
         new_col = alice_col
         if new_row >= size:
             print("Alice didn't make it to the tea party.")
             break
-        new_position = matrix[new_row][new_col]
-        if new_position == "R":
-            matrix[new_row][new_col] = "*"
-            print("Alice didn't make it to the tea party.")
-            break
-        elif new_position != "." and new_position != "*":
-            teabags_collected += int(new_position)
-        matrix[new_row][new_col] = "*"
-        alice_row = new_row
-        alice_col = new_col
-
     elif command == "left":
         new_row = alice_row
         new_col = alice_col - 1
         if new_col < 0:
             print("Alice didn't make it to the tea party.")
             break
-        new_position = matrix[new_row][new_col]
-        if new_position == "R":
-            matrix[new_row][new_col] = "*"
-            print("Alice didn't make it to the tea party.")
-            break
-        elif new_position != "." and new_position != "*":
-            teabags_collected += int(new_position)
-        matrix[new_row][new_col] = "*"
-        alice_row = new_row
-        alice_col = new_col
     elif command == "right":
         new_row = alice_row
         new_col = alice_col + 1
         if new_col >= size:
             print("Alice didn't make it to the tea party.")
             break
-        new_position = matrix[new_row][new_col]
-        if new_position == "R":
-            matrix[new_row][new_col] = "*"
-            print("Alice didn't make it to the tea party.")
-            break
-        elif new_position != "." and new_position != "*":
-            teabags_collected += int(new_position)
+
+    new_position = matrix[new_row][new_col]
+    if new_position == "R":
         matrix[new_row][new_col] = "*"
-        alice_row = new_row
-        alice_col = new_col
+        print("Alice didn't make it to the tea party.")
+        break
+    elif new_position != "." and new_position != "*":
+        teabags_collected += int(new_position)
+    matrix[new_row][new_col] = "*"
+    alice_row = new_row
+    alice_col = new_col
 
     if teabags_collected >= 10:
         print("She did it! She went to the party.")
