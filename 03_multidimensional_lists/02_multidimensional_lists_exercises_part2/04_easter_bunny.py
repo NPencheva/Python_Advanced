@@ -16,9 +16,17 @@ input2 = """8
 105 X B 2 12 43 5 19
 48 19 35 20 32 27 42 4
 73 88 78 32 37 52 X 22"""
+input_test = """5
+1 10 7 9 11
+X 1 4 X 63
+7 3 21 95 1
+100000 B 73 4 9
+1 1000 33 1 0"""
 
-sys.stdin = StringIO(input1)
+
+# sys.stdin = StringIO(input1)
 # sys.stdin = StringIO(input2)
+sys.stdin = StringIO(input_test)
 
 
 # n, m = [int(x) for x in input().split()]
@@ -62,7 +70,7 @@ def bunny_up(field, row, col):
     indices_list = []
     if row == 0:
         return result
-    for r in range(row - 1, 0, -1):
+    for r in range(row - 1, -1, -1):
         if field[r][col] == "X":
             break
         result += int(field[r][col])
@@ -92,7 +100,7 @@ def bunny_left(field, row, col):
     indices_list = []
     if col == 0:
         return result
-    for c in range(col - 1, 0, -1):
+    for c in range(col - 1, -1, -1):
         if field[row][c] == "X":
             break
         result += int(field[row][c])
